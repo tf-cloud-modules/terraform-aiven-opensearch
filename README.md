@@ -2,6 +2,16 @@
 
 Terraform module which creates Aiven Opensearch resources
 
+## Usage
+
+```hcl
+module "opensearch" {
+  source       = "tf-cloud-modules/opensearch/aiven"
+  project      = "test"
+  service_name = "test"
+}
+```
+
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
 
@@ -41,9 +51,18 @@ No modules.
 | <a name="input_max_index_count"></a> [max\_index\_count](#input\_max\_index\_count) | Maximum index count. | `string` | `""` | no |
 | <a name="input_opensearch_version"></a> [opensearch\_version](#input\_opensearch\_version) | OpenSearch major version. | `string` | `"1"` | no |
 | <a name="input_plan"></a> [plan](#input\_plan) | Defines what kind of computing resources are allocated for the service. | `string` | `"startup-4"` | no |
+| <a name="input_private_access_opensearch"></a> [private\_access\_opensearch](#input\_private\_access\_opensearch) | Allow clients to connect to opensearch with a DNS name that always resolves to the service's private IP addresses. Only available in certain network locations. | `bool` | `false` | no |
+| <a name="input_private_access_opensearch_dashboards"></a> [private\_access\_opensearch\_dashboards](#input\_private\_access\_opensearch\_dashboards) | Allow clients to connect to opensearch\_dashboards with a DNS name that always resolves to the service's private IP addresses. Only available in certain network locations. | `bool` | `false` | no |
+| <a name="input_private_access_prometheus"></a> [private\_access\_prometheus](#input\_private\_access\_prometheus) | Allow clients to connect to prometheus with a DNS name that always resolves to the service's private IP addresses. | `bool` | `false` | no |
+| <a name="input_privatelink_opensearch"></a> [privatelink\_opensearch](#input\_privatelink\_opensearch) | Enable opensearch. | `bool` | `false` | no |
+| <a name="input_privatelink_opensearch_dashboards"></a> [privatelink\_opensearch\_dashboards](#input\_privatelink\_opensearch\_dashboards) | Enable opensearch\_dashboards. | `bool` | `false` | no |
+| <a name="input_privatelink_prometheus"></a> [privatelink\_prometheus](#input\_privatelink\_prometheus) | Enable prometheus. | `bool` | `false` | no |
 | <a name="input_project"></a> [project](#input\_project) | Aiven Cloud Project Name | `string` | n/a | yes |
 | <a name="input_project_to_fork_from"></a> [project\_to\_fork\_from](#input\_project\_to\_fork\_from) | Name of another project to fork a service from. | `string` | `""` | no |
 | <a name="input_project_vpc_id"></a> [project\_vpc\_id](#input\_project\_vpc\_id) | Specifies the VPC the service should run in. If the value is not set the service is not run inside a VPC. | `string` | `null` | no |
+| <a name="input_public_access_opensearch"></a> [public\_access\_opensearch](#input\_public\_access\_opensearch) | Allow clients to connect to opensearch from the public internet for service nodes that are in a project VPC or another type of private network. | `bool` | `false` | no |
+| <a name="input_public_access_opensearch_dashboards"></a> [public\_access\_opensearch\_dashboards](#input\_public\_access\_opensearch\_dashboards) | Allow clients to connect to opensearch\_dashboards from the public internet for service nodes that are in a project VPC or another type of private network. | `bool` | `false` | no |
+| <a name="input_public_access_prometheus"></a> [public\_access\_prometheus](#input\_public\_access\_prometheus) | Allow clients to connect to prometheus from the public internet for service nodes that are in a project VPC or another type of private network. | `bool` | `false` | no |
 | <a name="input_recovery_basebackup_name"></a> [recovery\_basebackup\_name](#input\_recovery\_basebackup\_name) | Name of the basebackup to restore in forked service. | `string` | `""` | no |
 | <a name="input_service_name"></a> [service\_name](#input\_service\_name) | Specifies the actual name of the service. | `string` | n/a | yes |
 | <a name="input_service_to_fork_from"></a> [service\_to\_fork\_from](#input\_service\_to\_fork\_from) | Name of another service to fork from. | `string` | `""` | no |

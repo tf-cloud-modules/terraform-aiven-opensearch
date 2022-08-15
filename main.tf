@@ -20,6 +20,26 @@ resource "aiven_opensearch" "this" {
     project_to_fork_from                  = var.project_to_fork_from
     recovery_basebackup_name              = var.recovery_basebackup_name
     service_to_fork_from                  = var.service_to_fork_from
+
+
+    public_access {
+      prometheus            = var.public_access_prometheus
+      opensearch            = var.public_access_opensearch
+      opensearch_dashboards = var.public_access_opensearch_dashboards
+    }
+
+    private_access {
+      prometheus            = var.private_access_prometheus
+      opensearch            = var.private_access_opensearch
+      opensearch_dashboards = var.private_access_opensearch_dashboards
+    }
+
+    privatelink_access {
+      prometheus            = var.privatelink_prometheus
+      opensearch            = var.privatelink_opensearch
+      opensearch_dashboards = var.privatelink_opensearch_dashboards
+    }
+
   }
 
   dynamic "tag" {

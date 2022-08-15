@@ -115,3 +115,58 @@ variable "service_to_fork_from" {
   type        = string
   default     = ""
 }
+
+
+variable "public_access_prometheus" {
+  description = "Allow clients to connect to prometheus from the public internet for service nodes that are in a project VPC or another type of private network."
+  type        = bool
+  default     = false
+}
+
+variable "public_access_opensearch" {
+  description = "Allow clients to connect to opensearch from the public internet for service nodes that are in a project VPC or another type of private network."
+  type        = bool
+  default     = false
+}
+
+variable "public_access_opensearch_dashboards" {
+  description = "Allow clients to connect to opensearch_dashboards from the public internet for service nodes that are in a project VPC or another type of private network."
+  type        = bool
+  default     = false
+}
+
+variable "private_access_prometheus" {
+  description = "Allow clients to connect to prometheus with a DNS name that always resolves to the service's private IP addresses."
+  type        = bool
+  default     = false
+}
+
+variable "private_access_opensearch" {
+  description = "Allow clients to connect to opensearch with a DNS name that always resolves to the service's private IP addresses. Only available in certain network locations."
+  type        = bool
+  default     = false
+}
+
+variable "private_access_opensearch_dashboards" {
+  description = "Allow clients to connect to opensearch_dashboards with a DNS name that always resolves to the service's private IP addresses. Only available in certain network locations."
+  type        = bool
+  default     = false
+}
+
+variable "privatelink_prometheus" {
+  description = "Enable prometheus."
+  type        = bool
+  default     = false
+}
+
+variable "privatelink_opensearch" {
+  description = "Enable opensearch."
+  type        = bool
+  default     = false
+}
+
+variable "privatelink_opensearch_dashboards" {
+  description = "Enable opensearch_dashboards."
+  type        = bool
+  default     = false
+}
