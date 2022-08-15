@@ -28,3 +28,12 @@ module "acl_config" {
   project      = module.opensearch.project
   service_name = module.opensearch.service_name
 }
+
+module "acl_rule" {
+  source       = "../../modules/acl_rule"
+  project      = module.opensearch.project
+  service_name = module.opensearch.service_name
+  index        = "logs"
+  permission   = "readwrite"
+  username     = "test"
+}

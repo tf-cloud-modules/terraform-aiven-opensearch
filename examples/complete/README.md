@@ -5,6 +5,7 @@ Configuration in this directory creates AWS Backup resources with following feat
 - Aiven Opensearch cluster
 - Aiven Opensearch user
 - Aiven Opensearch ACL Config
+- Aiven Opensearch ACL Rule
 
 ## Usage
 
@@ -30,6 +31,7 @@ No providers.
 | Name | Source | Version |
 |------|--------|---------|
 | <a name="module_acl_config"></a> [acl\_config](#module\_acl\_config) | ../../modules/acl_config | n/a |
+| <a name="module_acl_rule"></a> [acl\_rule](#module\_acl\_rule) | ../../modules/acl_rule | n/a |
 | <a name="module_opensearch"></a> [opensearch](#module\_opensearch) | ../.. | n/a |
 | <a name="module_user"></a> [user](#module\_user) | ../../modules/user | n/a |
 
