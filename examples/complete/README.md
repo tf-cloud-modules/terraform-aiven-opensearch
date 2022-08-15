@@ -28,6 +28,7 @@ No providers.
 | Name | Source | Version |
 |------|--------|---------|
 | <a name="module_opensearch"></a> [opensearch](#module\_opensearch) | ../.. | n/a |
+| <a name="module_user"></a> [user](#module\_user) | ../../modules/user | n/a |
 
 ## Resources
 

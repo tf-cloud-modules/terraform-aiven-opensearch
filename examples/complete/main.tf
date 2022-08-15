@@ -15,3 +15,10 @@ module "opensearch" {
     number_of_shards             = "2"
   }]
 }
+
+module "user" {
+  source       = "../../modules/user"
+  project      = module.opensearch.project
+  service_name = module.opensearch.service_name
+  username     = "test"
+}
