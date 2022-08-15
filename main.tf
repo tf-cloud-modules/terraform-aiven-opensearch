@@ -40,6 +40,25 @@ resource "aiven_opensearch" "this" {
       opensearch_dashboards = var.privatelink_opensearch_dashboards
     }
 
+
+    dynamic "index_patterns" {
+      for_each = var.index_patterns
+      content {
+        max_index_count   = lookup(index_patterns.value, "max_index_count", null)
+        pattern           = lookup(index_patterns.value, "pattern", null)
+        sorting_algorithm = lookup(index_patterns.value, "sorting_algorithm", null)
+      }
+    }
+
+    dynamic "index_template" {
+      for_each = var.index_template
+      content {
+        mapping_nested_objects_limit = lookup(index_template.value, "mapping_nested_objects_limit", null)
+        number_of_replicas           = lookup(index_template.value, "number_of_replicas", null)
+        number_of_shards             = lookup(index_template.value, "number_of_shards", null)
+      }
+    }
+
   }
 
   dynamic "tag" {

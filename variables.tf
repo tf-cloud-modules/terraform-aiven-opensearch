@@ -170,3 +170,15 @@ variable "privatelink_opensearch_dashboards" {
   type        = bool
   default     = false
 }
+
+variable "index_patterns" {
+  description = "Index patterns."
+  type        = any
+  default     = []
+}
+
+variable "index_template" {
+  description = "Index template."
+  type        = any
+  default     = []
+}

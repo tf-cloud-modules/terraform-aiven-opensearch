@@ -12,8 +12,8 @@ This document describes the current status of this project.
 | ❌ | [Add opensearch_acl_rule module]() ||
 | ❌ | [Add opensearch_user module]() ||
 | ✔ | [Add opensearch_user_config]() ||
-| ❌ | [Add opensearch_user_config.index_patterns]() ||
-| ❌ | [Add opensearch_user_config.index_template]() ||
+| ✔ | [Add opensearch_user_config.index_patterns]() ||
+| ✔ | [Add opensearch_user_config.index_template]() ||
 | ❌ | [Add opensearch_user_config.opensearch]() ||
 | ❌ | [Add opensearch_user_config.opensearch_dashboards]() ||
 | ✔ | [Add opensearch_user_config.private_access]() ||
