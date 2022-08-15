@@ -22,3 +22,9 @@ module "user" {
   service_name = module.opensearch.service_name
   username     = "test"
 }
+
+module "acl_config" {
+  source       = "../../modules/acl_config"
+  project      = module.opensearch.project
+  service_name = module.opensearch.service_name
+}
