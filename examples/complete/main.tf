@@ -14,6 +14,12 @@ module "opensearch" {
     number_of_replicas           = "2"
     number_of_shards             = "2"
   }]
+  tags = [
+    {
+      key   = "env"
+      value = "test"
+    }
+  ]
 }
 
 module "user" {
