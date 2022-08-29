@@ -51,6 +51,8 @@ No modules.
 | <a name="input_maintenance_window_dow"></a> [maintenance\_window\_dow](#input\_maintenance\_window\_dow) | Day of week when maintenance operations should be performed. One monday, tuesday, wednesday, etc. | `string` | `"thursday"` | no |
 | <a name="input_maintenance_window_time"></a> [maintenance\_window\_time](#input\_maintenance\_window\_time) | Time of day when maintenance operations should be performed. UTC time in HH:mm:ss format. | `string` | `"01:00:00"` | no |
 | <a name="input_max_index_count"></a> [max\_index\_count](#input\_max\_index\_count) | Maximum index count. | `string` | `""` | no |
+| <a name="input_opensearch_dashboards_user_config"></a> [opensearch\_dashboards\_user\_config](#input\_opensearch\_dashboards\_user\_config) | OpenSearch Dashboards settings. | `list(any)` | `[]` | no |
+| <a name="input_opensearch_user_config"></a> [opensearch\_user\_config](#input\_opensearch\_user\_config) | Opensearch user configurable settings. | `list(any)` | `[]` | no |
 | <a name="input_opensearch_version"></a> [opensearch\_version](#input\_opensearch\_version) | OpenSearch major version. | `string` | `"1"` | no |
 | <a name="input_plan"></a> [plan](#input\_plan) | Defines what kind of computing resources are allocated for the service. | `string` | `"startup-4"` | no |
 | <a name="input_private_access_opensearch"></a> [private\_access\_opensearch](#input\_private\_access\_opensearch) | Allow clients to connect to opensearch with a DNS name that always resolves to the service's private IP addresses. Only available in certain network locations. | `bool` | `false` | no |

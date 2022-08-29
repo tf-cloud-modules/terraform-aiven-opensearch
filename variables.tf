@@ -182,3 +182,15 @@ variable "index_template" {
   type        = any
   default     = []
 }
+
+variable "opensearch_user_config" {
+  description = "Opensearch user configurable settings."
+  type        = list(any)
+  default     = []
+}
+
+variable "opensearch_dashboards_user_config" {
+  description = "OpenSearch Dashboards settings."
+  type        = list(any)
+  default     = []
+}
