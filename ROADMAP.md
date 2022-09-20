@@ -19,4 +19,4 @@ This document describes the current status of this project.
 | ✔ | [Add opensearch_user_config.private_access]() ||
 | ✔ | [Add opensearch_user_config.privatelink_access]() ||
 | ✔ | [Add opensearch_user_config.public_access]() ||
-| ❌ | [Add service_integrations]() ||
+| ✔ | [Add service_integrations]() ||
