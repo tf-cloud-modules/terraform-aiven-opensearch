@@ -1,6 +1,6 @@
 module "opensearch" {
   source       = "../.."
-  project      = "tf-cloud-modules"
+  project      = var.project
   service_name = "test"
   index_patterns = [
     {
