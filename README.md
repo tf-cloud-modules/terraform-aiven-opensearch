@@ -46,7 +46,7 @@ No modules.
 | <a name="input_disable_replication_factor_adjustment"></a> [disable\_replication\_factor\_adjustment](#input\_disable\_replication\_factor\_adjustment) | Disable replication factor adjustment. | `bool` | `null` | no |
 | <a name="input_index_patterns"></a> [index\_patterns](#input\_index\_patterns) | Index patterns. | `any` | `[]` | no |
 | <a name="input_index_template"></a> [index\_template](#input\_index\_template) | Index template. | `any` | `[]` | no |
-| <a name="input_ip_filter_object"></a> [ip\_filter\_object](#input\_ip\_filter\_object) | Allow incoming connections from CIDR address block, e.g. '10.20.0.0/16'. | `list(any)` | `[]` | no |
+| <a name="input_ip_filter_object"></a> [ip\_filter\_object](#input\_ip\_filter\_object) | Allow incoming connections from CIDR address block, e.g. '10.20.0.0/16'. | `list(any)` | <pre>[<br>  {<br>    "network": "0.0.0.0/0"<br>  }<br>]</pre> | no |
 | <a name="input_keep_index_refresh_interval"></a> [keep\_index\_refresh\_interval](#input\_keep\_index\_refresh\_interval) | Don't reset index.refresh\_interval to the default value. | `bool` | `null` | no |
 | <a name="input_maintenance_window_dow"></a> [maintenance\_window\_dow](#input\_maintenance\_window\_dow) | Day of week when maintenance operations should be performed. One monday, tuesday, wednesday, etc. | `string` | `"thursday"` | no |
 | <a name="input_maintenance_window_time"></a> [maintenance\_window\_time](#input\_maintenance\_window\_time) | Time of day when maintenance operations should be performed. UTC time in HH:mm:ss format. | `string` | `"01:00:00"` | no |

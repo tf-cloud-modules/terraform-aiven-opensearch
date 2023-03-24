@@ -198,5 +198,9 @@ variable "service_integrations" {
 variable "ip_filter_object" {
   description = "Allow incoming connections from CIDR address block, e.g. '10.20.0.0/16'."
   type        = list(any)
-  default     = []
+  default     = [
+    {
+      network ="0.0.0.0/0"
+    }
+  ]
 }
