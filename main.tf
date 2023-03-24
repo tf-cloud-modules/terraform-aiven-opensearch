@@ -13,7 +13,6 @@ resource "aiven_opensearch" "this" {
   opensearch_user_config {
     custom_domain                         = var.custom_domain
     disable_replication_factor_adjustment = var.disable_replication_factor_adjustment
-    ip_filter                             = var.ip_filter
     keep_index_refresh_interval           = var.keep_index_refresh_interval
     max_index_count                       = var.max_index_count
     opensearch_version                    = var.opensearch_version
@@ -21,6 +20,13 @@ resource "aiven_opensearch" "this" {
     recovery_basebackup_name              = var.recovery_basebackup_name
     service_to_fork_from                  = var.service_to_fork_from
 
+    dynamic "ip_filter_object" {
+      for_each = var.ip_filter_object
+      content {
+        network     = lookup(ip_filter_object.value, "network")
+        description = lookup(ip_filter_object.value, "description", null)
+      }
+    }
 
     public_access {
       prometheus            = var.public_access_prometheus

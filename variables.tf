@@ -70,26 +70,20 @@ variable "custom_domain" {
 
 variable "disable_replication_factor_adjustment" {
   description = "Disable replication factor adjustment."
-  type        = string
-  default     = ""
-}
-
-variable "ip_filter" {
-  description = "IP filter."
-  type        = list(string)
-  default     = ["0.0.0.0/0"]
+  type        = bool
+  default     = null
 }
 
 variable "keep_index_refresh_interval" {
   description = "Don't reset index.refresh_interval to the default value."
-  type        = string
-  default     = ""
+  type        = bool
+  default     = null
 }
 
 variable "max_index_count" {
   description = "Maximum index count."
-  type        = string
-  default     = ""
+  type        = number
+  default     = null
 }
 
 variable "opensearch_version" {
@@ -197,6 +191,12 @@ variable "opensearch_dashboards_user_config" {
 
 variable "service_integrations" {
   description = "Service integrations to specify when creating a service."
+  type        = list(any)
+  default     = []
+}
+
+variable "ip_filter_object" {
+  description = "Allow incoming connections from CIDR address block, e.g. '10.20.0.0/16'."
   type        = list(any)
   default     = []
 }
