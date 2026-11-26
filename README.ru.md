@@ -26,7 +26,7 @@ Aiven требует, чтобы перед обновлением сервис�
 | Name | Version |
 | ---- | ------- |
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 0.13.1 |
-| <a name="requirement_aiven"></a> [aiven](#requirement\_aiven) | >= 4.66.0, < 5.0.0 |
+| <a name="requirement_aiven"></a> [aiven](#requirement\_aiven) | 4.66.0 |
 
 ## Providers
 
@@ -42,7 +42,7 @@ No modules.
 
 | Name | Type |
 | ---- | ---- |
-| [aiven_opensearch.this](https://registry.terraform.io/providers/aiven/aiven/latest/docs/resources/opensearch) | resource |
+| [aiven_opensearch.this](https://registry.terraform.io/providers/aiven/aiven/4.66.0/docs/resources/opensearch) | resource |
 
 ## Inputs
 
