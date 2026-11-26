@@ -13,6 +13,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 - Raise the aiven/aiven provider constraint to `>= 4.66.0, < 5.0.0`.
 - Use `null` defaults for optional string inputs when no value is configured.
+- **Breaking:** change the default OpenSearch version from `1` to `3.8`. Existing deployments that omit `opensearch_version` may plan a major service-version upgrade; review the plan and pin the current version if needed.
+- Before upgrading a service to OpenSearch 3.x, ensure all indices are at least version 2.x. User-created 1.x indices may require an intermediate service upgrade to 2.19 and reindexing. See the Aiven upgrade and reindexing guides in README.md; the module does not migrate index data.
 
 ### Fixed
 - Apply the canonical Terraform `.gitignore` and format the Terraform configuration.

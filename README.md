@@ -14,6 +14,12 @@ module "opensearch" {
 }
 ```
 
+## OpenSearch version and upgrades
+
+New services default to OpenSearch `3.8`. Changing this default can make Terraform plan a major service-version upgrade for existing deployments that omit `opensearch_version`. Review the plan and set the variable to the current service version if you are not ready to upgrade.
+
+Aiven requires all indices to be at least version 2.x before upgrading a service to OpenSearch 3.x. Services with user-created indices from OpenSearch 1.x may need a staged upgrade to 2.19 and reindexing before moving to 3.x. Review Aiven's [upgrade guide](https://aiven.io/docs/products/opensearch/howto/os-version-upgrade) and [reindexing guide](https://aiven.io/docs/products/opensearch/howto/reindex-opensearch) before applying an upgrade. This module does not reindex data.
+
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
 
@@ -26,7 +32,7 @@ module "opensearch" {
 
 | Name | Version |
 | ---- | ------- |
-| <a name="provider_aiven"></a> [aiven](#provider\_aiven) | >= 4.66.0, < 5.0.0 |
+| <a name="provider_aiven"></a> [aiven](#provider\_aiven) | 4.66.0 |
 
 ## Modules
 
@@ -55,7 +61,7 @@ No modules.
 | <a name="input_max_index_count"></a> [max\_index\_count](#input\_max\_index\_count) | Maximum index count. | `number` | `null` | no |
 | <a name="input_opensearch_dashboards_user_config"></a> [opensearch\_dashboards\_user\_config](#input\_opensearch\_dashboards\_user\_config) | OpenSearch Dashboards settings. | `list(any)` | `[]` | no |
 | <a name="input_opensearch_user_config"></a> [opensearch\_user\_config](#input\_opensearch\_user\_config) | Opensearch user configurable settings. | `list(any)` | `[]` | no |
-| <a name="input_opensearch_version"></a> [opensearch\_version](#input\_opensearch\_version) | OpenSearch major version. | `string` | `"1"` | no |
+| <a name="input_opensearch_version"></a> [opensearch\_version](#input\_opensearch\_version) | OpenSearch version. Defaults to 3.8 for new services. | `string` | `"3.8"` | no |
 | <a name="input_plan"></a> [plan](#input\_plan) | Defines what kind of computing resources are allocated for the service. | `string` | `"startup-4"` | no |
 | <a name="input_private_access_opensearch"></a> [private\_access\_opensearch](#input\_private\_access\_opensearch) | Allow clients to connect to opensearch with a DNS name that always resolves to the service's private IP addresses. Only available in certain network locations. | `bool` | `false` | no |
 | <a name="input_private_access_opensearch_dashboards"></a> [private\_access\_opensearch\_dashboards](#input\_private\_access\_opensearch\_dashboards) | Allow clients to connect to opensearch\_dashboards with a DNS name that always resolves to the service's private IP addresses. Only available in certain network locations. | `bool` | `false` | no |

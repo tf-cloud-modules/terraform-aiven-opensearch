@@ -25,7 +25,7 @@ module "user" {
 
 | Name | Version |
 | ---- | ------- |
-| <a name="provider_aiven"></a> [aiven](#provider\_aiven) | >= 4.66.0, < 5.0.0 |
+| <a name="provider_aiven"></a> [aiven](#provider\_aiven) | 4.66.0 |
 
 ## Modules
 

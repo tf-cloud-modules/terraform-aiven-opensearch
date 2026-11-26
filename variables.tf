@@ -87,9 +87,9 @@ variable "max_index_count" {
 }
 
 variable "opensearch_version" {
-  description = "OpenSearch major version."
+  description = "OpenSearch version. Defaults to 3.8 for new services."
   type        = string
-  default     = "1"
+  default     = "3.8"
 }
 
 variable "project_to_fork_from" {

@@ -14,6 +14,12 @@ module "opensearch" {
 }
 ```
 
+## Версия OpenSearch и обновления
+
+Для новых сервисов по умолчанию используется OpenSearch `3.8`. Изменение значения по умолчанию может привести к тому, что Terraform запланирует обновление версии существующего сервиса, если `opensearch_version` не задан явно. Проверьте план и укажите текущую версию сервиса, если обновление пока не требуется.
+
+Aiven требует, чтобы перед обновлением сервиса до OpenSearch 3.x версии всех индексов были не ниже 2.x. Для сервисов с пользовательскими индексами, созданными в OpenSearch 1.x, может потребоваться поэтапное обновление до 2.19 и повторная индексация перед переходом на 3.x. Перед применением проверьте [руководство Aiven по обновлению](https://aiven.io/docs/products/opensearch/howto/os-version-upgrade) и [руководство по повторной индексации](https://aiven.io/docs/products/opensearch/howto/reindex-opensearch). Модуль не выполняет повторную индексацию данных.
+
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
 
@@ -26,7 +32,7 @@ module "opensearch" {
 
 | Name | Version |
 | ---- | ------- |
-| <a name="provider_aiven"></a> [aiven](#provider\_aiven) | >= 4.66.0, < 5.0.0 |
+| <a name="provider_aiven"></a> [aiven](#provider\_aiven) | 4.66.0 |
 
 ## Modules
 
@@ -55,7 +61,7 @@ No modules.
 | <a name="input_max_index_count"></a> [max\_index\_count](#input\_max\_index\_count) | Maximum index count. | `number` | `null` | no |
 | <a name="input_opensearch_dashboards_user_config"></a> [opensearch\_dashboards\_user\_config](#input\_opensearch\_dashboards\_user\_config) | OpenSearch Dashboards settings. | `list(any)` | `[]` | no |
 | <a name="input_opensearch_user_config"></a> [opensearch\_user\_config](#input\_opensearch\_user\_config) | Opensearch user configurable settings. | `list(any)` | `[]` | no |
-| <a name="input_opensearch_version"></a> [opensearch\_version](#input\_opensearch\_version) | OpenSearch major version. | `string` | `"1"` | no |
+| <a name="input_opensearch_version"></a> [opensearch\_version](#input\_opensearch\_version) | OpenSearch version. Defaults to 3.8 for new services. | `string` | `"3.8"` | no |
 | <a name="input_plan"></a> [plan](#input\_plan) | Defines what kind of computing resources are allocated for the service. | `string` | `"startup-4"` | no |
 | <a name="input_private_access_opensearch"></a> [private\_access\_opensearch](#input\_private\_access\_opensearch) | Allow clients to connect to opensearch with a DNS name that always resolves to the service's private IP addresses. Only available in certain network locations. | `bool` | `false` | no |
 | <a name="input_private_access_opensearch_dashboards"></a> [private\_access\_opensearch\_dashboards](#input\_private\_access\_opensearch\_dashboards) | Allow clients to connect to opensearch\_dashboards with a DNS name that always resolves to the service's private IP addresses. Only available in certain network locations. | `bool` | `false` | no |
