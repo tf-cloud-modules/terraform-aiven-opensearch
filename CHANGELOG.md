@@ -7,11 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [3.0.0] - 2026-11-26
+
 ### Added
 - Add a Russian README translation.
 
 ### Changed
-- Pin the tested aiven/aiven provider version to `4.66.0`.
+- Tested with `aiven/aiven 4.66.0`; pin the provider to this exact version.
 - Use `null` defaults for optional string inputs when no value is configured.
 - **Breaking:** change the default OpenSearch version from `1` to `3.8`. Existing deployments that omit `opensearch_version` may plan a major service-version upgrade; review the plan and pin the current version if needed.
 - Before upgrading a service to OpenSearch 3.x, ensure all indices are at least version 2.x. User-created 1.x indices may require an intermediate service upgrade to 2.19 and reindexing. See the Aiven upgrade and reindexing guides in README.md; the module does not migrate index data.
@@ -84,7 +86,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Initial release.
 
-[Unreleased]: https://github.com/tf-cloud-modules/terraform-aiven-opensearch/compare/2.0.1...HEAD
+[Unreleased]: https://github.com/tf-cloud-modules/terraform-aiven-opensearch/compare/3.0.0...HEAD
+[3.0.0]: https://github.com/tf-cloud-modules/terraform-aiven-opensearch/compare/2.0.1...3.0.0
 [2.0.1]: https://github.com/tf-cloud-modules/terraform-aiven-opensearch/compare/2.0.0...2.0.1
 [2.0.0]: https://github.com/tf-cloud-modules/terraform-aiven-opensearch/compare/1.1.2...2.0.0
 [1.1.2]: https://github.com/tf-cloud-modules/terraform-aiven-opensearch/compare/1.1.1...1.1.2
