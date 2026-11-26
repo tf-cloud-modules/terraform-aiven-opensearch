@@ -20,7 +20,10 @@ $ terraform apply
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
 
-No requirements.
+| Name | Version |
+| ---- | ------- |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 0.13.1 |
+| <a name="requirement_aiven"></a> [aiven](#requirement\_aiven) | 4.66.0 |
 
 ## Providers
 
@@ -29,7 +32,7 @@ No providers.
 ## Modules
 
 | Name | Source | Version |
-|------|--------|---------|
+| ---- | ------ | ------- |
 | <a name="module_acl_config"></a> [acl\_config](#module\_acl\_config) | ../../modules/acl_config | n/a |
 | <a name="module_acl_rule"></a> [acl\_rule](#module\_acl\_rule) | ../../modules/acl_rule | n/a |
 | <a name="module_opensearch"></a> [opensearch](#module\_opensearch) | ../.. | n/a |
@@ -42,7 +45,7 @@ No resources.
 ## Inputs
 
 | Name | Description | Type | Default | Required |
-|------|-------------|------|---------|:--------:|
+| ---- | ----------- | ---- | ------- | :------: |
 | <a name="input_project"></a> [project](#input\_project) | Aiven Cloud Project Name. | `string` | n/a | yes |
 
 ## Outputs
